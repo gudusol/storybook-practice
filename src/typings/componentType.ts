@@ -19,7 +19,7 @@ export interface ButtonProps {
   onClick?: () => void;
 }
 
-export interface ButtoContainerProps {
+export interface ButtonContainerProps {
   variant?: string;
   size?: string;
 }

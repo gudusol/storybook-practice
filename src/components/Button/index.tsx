@@ -9,5 +9,4 @@ const Button = ({ type = 'button', label, variant = 'primary', size = 'medium', 
     </ButtonContainer>
   );
 };
-
 export default Button;
