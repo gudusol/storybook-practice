@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Button } from './Button';
+import { Button } from '@components';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -14,9 +14,16 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
+    variant: {
+      control: { type: 'radio' },
+      options: ['primary', 'outline', 'disabled'],
+    },
+    size: {
+      control: { type: 'select' },
+      options: ['small', 'medium', 'large'],
+    },
+    // backgroundColor: { control: "color" },
+  }, // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
 
@@ -26,27 +33,40 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    primary: true,
-    label: 'Button',
+    variant: 'primary',
+    label: 'Primary Button',
   },
 };
 
-export const Secondary: Story = {
+export const Outline: Story = {
   args: {
-    label: 'Button',
+    variant: 'outline',
+    label: 'Outline Button',
   },
 };
 
-export const Large: Story = {
+export const Disabled: Story = {
   args: {
-    size: 'large',
-    label: 'Button',
+    variant: 'disabled',
+    label: 'Disabled Button',
   },
 };
 
 export const Small: Story = {
   args: {
     size: 'small',
-    label: 'Button',
+    label: 'Small Button',
+  },
+};
+export const Medium: Story = {
+  args: {
+    size: 'medium',
+    label: 'Medium Button',
+  },
+};
+export const Large: Story = {
+  args: {
+    size: 'large',
+    label: 'Large Button',
   },
 };

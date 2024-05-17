@@ -1,7 +1,7 @@
 import { Global, ThemeProvider } from '@emotion/react';
 import GlobalStyle from '@styles/global';
 import theme from '@styles/theme';
-import { Button } from '@components';
+import { Button, Form } from '@components';
 import styled from '@emotion/styled';
 
 function App() {
@@ -10,8 +10,9 @@ function App() {
       <Global styles={GlobalStyle} />
       <H1>Storybook 실습! 숨심스 화이팅~!</H1>
       <MainContainer>
-        <Button label={'버튼입니다.'} />
+        <Button label={'버튼입니다.'} onClick={() => alert('야호')} />
       </MainContainer>
+      <Form />
     </ThemeProvider>
   );
 }
