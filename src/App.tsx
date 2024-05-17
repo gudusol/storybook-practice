@@ -8,19 +8,22 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Global styles={GlobalStyle} />
+      <H1>Storybook 실습! 숨심스 화이팅~!</H1>
       <MainContainer>
-        <Button label="primary" variant={'primary'} />
-        <Button label="outline" variant={'outline'} />
-        <Button label="disable" variant={'disable'} />
-        <Button label="small" size={'small'} />
-        <Button label="medium" size={'medium'} />
-        <Button label="large" size={'large'} />
+        <Button label={'버튼입니다.'} />
       </MainContainer>
     </ThemeProvider>
   );
 }
 
 export default App;
+
+const H1 = styled.h1`
+  margin-top: 4rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+`;
 
 const MainContainer = styled.div`
   display: flex;
